@@ -7,30 +7,36 @@
     <link rel="stylesheet" href="../_shared/style.css">
   </head>
   <body>
-    <div class="container">
+    <div class="conf-container">
       <h1 class="heading">Room example</h1>
       <p class="note">
         Change Room mode (before join in a room):
         <a href="#">mesh</a> / <a href="#sfu">sfu</a>
       </p>
-      <div class="room">
-        <div>
-          <video id="js-local-stream"></video>
-          <span id="js-room-mode"></span>:
-          <input type="text" placeholder="Room Name" id="js-room-id">
-          <button id="js-join-trigger">Join</button>
-          <button id="js-leave-trigger">Leave</button>
-        </div>
 
-        <div class="remote-streams" id="js-remote-streams"></div>
+      <div class="conf-room">
+        <span id="js-room-mode"></span>:
+        <input type="text" placeholder="Room Name" id="js-room-id">
+        <button id="js-join-trigger">Join</button>
+        <button id="js-leave-trigger">Leave</button>
+      </div>
 
-        <div>
-          <pre class="messages" id="js-messages"></pre>
+      <div class="conf-box">
+        <div class="conf-remote-stream" id="js-remote-streams"></div>
+        
+        <div class="chat">
+          Chat<br>
           <input type="text" id="js-local-text">
           <button id="js-send-trigger">Send</button>
+          <pre class="messages" id="js-messages"></pre>
         </div>
       </div>
-      <p class="meta" id="js-meta"></p>
+
+      <div class="conf-local-stream">
+        <video id="js-local-stream"></video>
+      </div>
+
+      <p class="conf-meta" id="js-meta"></p>
     </div>
     <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
     <script src="../_shared/key.js"></script>
