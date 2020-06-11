@@ -4,59 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SkyWay - Room example</title>
-    <style>      
-      .conf-container {
-        margin-left: auto;
-        margin-right: auto;
-        width: 94%;
-      }
-
-      .conf-room {
-        align-items: center;
-      }
-
-      .conf-box {
-        position:relative;
-        width: 100%;
-      }
-
-      .conf-remote-stream {
-        position:absolute;
-        top:10px;
-        left:10px;
-        width: 80%;
-        height: 80%;
-        background-color: #f6fbff;
-        border-color: yellow;
-        float: left;
-      }
-
-      .chat {
-        background-color: #00ff00;
-        position:absolute;
-        top:10px;
-        right:10px;
-        width:auto;
-        float: right;
-        border-color: red;
-      }
-
-      .conf-local-stream {
-        position:absolute;
-        bottom:10px;
-        right:10px;
-        width: 160px;
-        height: 120px;
-      }
-
-      .conf-meta {
-        position:absolute;
-        bottom:10px;
-        text-align: center;
-        font-size: .8rem;
-        color: gray;
-      }
-    </style>
+    <link rel="stylesheet" href="../_shared/style.css">
   </head>
   <body>
     <div class="conf-container">
@@ -91,7 +39,6 @@
       <p class="conf-meta" id="js-meta"></p>
     </div>
     <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
-    <script src="../_shared/key.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
