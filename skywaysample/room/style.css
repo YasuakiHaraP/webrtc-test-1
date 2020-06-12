@@ -1,0 +1,156 @@
+/* normalize */
+body { margin: 0; }
+
+/* global styles */
+video {
+  background-color: #111;
+  width: 100%;
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.note {
+  text-align: center;
+}
+
+.meta {
+  text-align: center;
+  font-size: .8rem;
+  color: gray;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 980px;
+}
+
+/* p2p-media styles */
+.p2p-media {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.p2p-media .remote-stream {
+  width: 50%;
+}
+
+.p2p-media .local-stream {
+  width: 30%;
+}
+
+/* p2p-data styles */
+.p2p-data {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  margin: 0 8px;
+}
+
+.p2p-data .messages {
+  background-color: #eee;
+  min-height: 100px;
+  padding: 8px;
+  margin-top: 0;
+}
+
+/* room */
+.room {
+  display: grid;
+  grid-template-columns: 30% 40% 30%;
+  gap: 8px;
+  margin: 0 8px;
+}
+
+.room .remote-streams {
+  background-color: #f6fbff;
+}
+
+.room .messages {
+  background-color: #eee;
+  min-height: 100px;
+  padding: 8px;
+  margin-top: 0;
+}
+
+
+.conf-title {
+  background-color: #1e4c88;
+  color: white;
+  z-index: 10;
+}
+
+.conf-heading {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.conf-note {
+  text-align: center;
+}
+
+.conf-container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 94%;
+}
+
+.conf-room {
+  align-items: center;
+  background-color: #5e68ee;
+  color: white;
+}
+
+.conf-box {
+  position:relative;
+  width: 100%;
+}
+
+.conf-remote-streams {
+  width: 960px;
+  display: grid;
+  grid-template-columns: 240px 240px 240px 240px;
+  background-color: #f6fbff;
+  border-color: yellow;
+  float: left;
+}
+
+.conf-chat {
+  background-color: #63e463;
+  position:absolute;
+  top:10px;
+  right:10px;
+  width:auto;
+  height: 300px;
+  float: right;
+  border-color: red;
+  border-width: 10px;
+}
+
+.conf-local-stream {
+  position:absolute;
+  bottom:10px;
+  right:10px;
+  width: 160px;
+  height: 120px;
+  z-index: 100;
+}
+
+.conf-footer {
+  position:absolute;
+  bottom:10px;
+  width: 100%;
+  background-color: #1e4c88;
+  color: white;
+  text-align: center;
+  font-size: .8rem;
+  z-index: 10;
+}
+
+.conf-meta {
+  text-align: center;
+  font-size: .8rem;
+}

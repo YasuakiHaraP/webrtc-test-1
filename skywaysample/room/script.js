@@ -7,6 +7,7 @@ const Peer = window.Peer;
   const remoteVideos = document.getElementById('js-remote-streams');
   const roomId = document.getElementById('js-room-id');
   const roomMode = document.getElementById('js-room-mode');
+  const nameText = document.getElementById('js-name-text');
   const localText = document.getElementById('js-local-text');
   const sendTrigger = document.getElementById('js-send-trigger');
   const messages = document.getElementById('js-messages');
@@ -72,13 +73,21 @@ const Peer = window.Peer;
       newVideo.playsInline = true;
       // mark peerId to find it later at peerLeave event
       newVideo.setAttribute('data-peer-id', stream.peerId);
+      newVideo.width = 240;
+      newVideo.height = 180;
       remoteVideos.append(newVideo);
       await newVideo.play().catch(console.error);
     });
 
     room.on('data', ({ data, src }) => {
       // Show a message sent to the room and who sent
-      messages.textContent += `${src}: ${data}\n`;
+//      messages.textContent += `${src}: ${data}\n`;
+      var json = JSON.parse(data);
+      var name = json['name']
+      if (!name) {
+        name = src;
+      }
+      messages.textContent += `${name}: ${json['message']}\n`;
     });
 
     // for closing room members
@@ -108,10 +117,20 @@ const Peer = window.Peer;
     leaveTrigger.addEventListener('click', () => room.close(), { once: true });
 
     function onClickSend() {
+      var name = peer.id;
+      if (nameText.value) {
+        name = nameText.value;
+      }
       // Send message to all of the peers in the room via websocket
-      room.send(localText.value);
+//      room.send(localText.value);
+      var json = {};
+      json.peerId = peer.id;
+      json.name = name;
+      json.message = localText.value;
+      room.send(JSON.stringify(json));
 
-      messages.textContent += `${peer.id}: ${localText.value}\n`;
+//      messages.textContent += `${peer.id}: ${localText.value}\n`;
+      messages.textContent += `Me : ${localText.value}\n`;
       localText.value = '';
     }
   });
