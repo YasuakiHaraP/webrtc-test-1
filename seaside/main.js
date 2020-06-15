@@ -1008,7 +1008,7 @@ const vm = new Vue({
     on_setup: function () {
       // Create Peer object
       const options = {
-        key: window.__SKYWAY_KEY__,
+        key: 'ec146750-4969-4be4-aa5b-502859c7404a',
         debug: 3,
       }
       if (this.is_p2p && this.skyway.peerId) {
