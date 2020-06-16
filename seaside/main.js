@@ -10,7 +10,7 @@ const vm = new Vue({
     local_stream: null, // myself
     local_screen: null, // screen share stream
     skyway: {
-      mode: { label: "Mesh", value: "mesh" },
+      mode: { label: "Sfu", value: "sfu" },
       peer: null,
       call: null, // MediaConnection
       room: null, // MeshRoom, SFURoom
@@ -1165,10 +1165,10 @@ const vm = new Vue({
       this.on_hidden_recognition_modal();
     })
 
-    jQuery('#modal-settings').on('hidden.bs.modal', (e) => {
+//    jQuery('#modal-settings').on('hidden.bs.modal', (e) => {
       this.on_setup();
-    })
-    jQuery('#modal-settings').modal({show:true, backdrop:'static'});
+//    })
+//    jQuery('#modal-settings').modal({show:true, backdrop:'static'});
 
   },
   directives: {
